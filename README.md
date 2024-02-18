@@ -11,3 +11,6 @@ A toy no-std, mmapped persisted key value store backed by the original self blan
 
 ## Reading/Tooling
 https://nnethercote.github.io/perf-book/benchmarking.html
+
+## Installation
+Requires Linux or a really great virtualization env like orbstack.
