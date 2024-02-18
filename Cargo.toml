@@ -8,3 +8,5 @@ edition = "2021"
 [dependencies]
 anyhow = "1.0.79"
 glommio = "0.8.0"
+memmap2 = "0.9.4"
+proptest = "1.4.0"
