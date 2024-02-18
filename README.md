@@ -8,3 +8,6 @@ A toy no-std, mmapped persisted key value store backed by the original self blan
 - https://github.com/pvachon/wavl_tree
 - https://sites.google.com/view/bst-comparison/home
 - https://oar.princeton.edu/handle/88435/pr1nz5z
+
+## Reading/Tooling
+https://nnethercote.github.io/perf-book/benchmarking.html

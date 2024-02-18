@@ -7,6 +7,9 @@ edition = "2021"
 
 [dependencies]
 anyhow = "1.0.79"
+crossbeam = "0.8.4"
 glommio = "0.8.0"
+hashbrown = "0.14.3"
 memmap2 = "0.9.4"
+parking_lot = "0.12.1"
 proptest = "1.4.0"
