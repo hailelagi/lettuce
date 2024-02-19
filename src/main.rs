@@ -1,6 +1,7 @@
 use std::fs::File;
 use std::io::Read;
 
+use anyhow::Result;
 use glommio::{executor, Latency, LocalExecutorBuilder, Placement, Shares};
 use memmap2::Mmap;
 
@@ -29,4 +30,6 @@ fn read() -> Result<()> {
     let mmap = unsafe { Mmap::map(&file)? };
 
     assert_eq!(&contents[..], &mmap[..]);
+
+    Ok(())
 }
