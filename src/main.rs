@@ -2,10 +2,11 @@ use std::fs::File;
 use std::io::Read;
 
 use anyhow::Result;
-use glommio::{executor, Latency, LocalExecutorBuilder, Placement, Shares};
+// use glommio::{executor, Latency, LocalExecutorBuilder, Placement, Shares};
 use memmap2::Mmap;
 
 fn main() {
+    /*
     LocalExecutorBuilder::new(Placement::Fixed(0))
         .spawn(|| async move {
             let tq1 =
@@ -19,6 +20,8 @@ fn main() {
             t2.await;
         })
         .unwrap();
+
+    */
 }
 
 fn read() -> Result<()> {

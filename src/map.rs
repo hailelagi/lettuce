@@ -1,8 +1,8 @@
 use hashbrown::HashMap;
 use parking_lot::RawRwLock;
 
-pub struct Map {
-    store: HashMap,
+pub struct Map<K, V> {
+    store: HashMap<K, V>,
     locks: [RawRwLock; 8],
     global: RawRwLock,
 }
