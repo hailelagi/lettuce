@@ -11,17 +11,17 @@ struct Node<K, V> {
 }
 
 #[derive(Debug)]
-pub struct AVLTree<K, V> {
+pub struct WAVLTree<K, V> {
     root: Option<Box<Node<K, V>>>,
 }
 
-impl<K: Ord, V> AVLTree<K, V> {
+impl<K: Ord, V> WAVLTree<K, V> {
     pub fn new() -> Self {
-        AVLTree { root: None }
+        WAVLTree { root: None }
     }
 }
 
-impl Table for AVLTree {}
+impl Table for WAVLTree {}
 
 #[cfg(test)]
 mod tests {
@@ -29,7 +29,7 @@ mod tests {
 
     #[test]
     fn test_insert_and_get() {
-        let mut tree = AVLTree::new();
+        let mut tree = WAVLTree::new();
         tree.set(1, "one");
         tree.set(2, "two");
         tree.set(3, "three");
