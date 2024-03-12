@@ -1,3 +1,5 @@
 [toolchain]
-channel = "nightly-2024-02-18"
-targets = ["x86_64-unknown-linux-gnu"]
+channel = "stable"
+# todo: eventually this will only target x86 but devloping on linux is inconvenient
+# replace me if/when adding async io_uring, accessing or shimming it out to O_DIRECT
+# targets = ["x86_64-unknown-linux-gnu"]
