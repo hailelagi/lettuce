@@ -1,9 +1,11 @@
+use std::cmp;
+
 use anyhow::Result;
 // use futures::Future;
 
 pub trait Table<K, V>
 where
-    K: Send + Sync,
+    K: Send + Sync + cmp::Ord,
     V: Send + Sync,
 {
     fn new() -> Result<Self>

@@ -1,27 +1,15 @@
 use crate::Table;
-use std::cmp::Ord;
+use std::cmp;
 
-#[derive(Debug)]
-pub struct WAVLTree<K, V> {
-    root: Option<Box<Node<K, V>>>,
-}
+// a CATree port based on https://dl.acm.org/doi/10.1145/2633448.2633455
 
-#[derive(Debug)]
-struct Node<K, V> {
-    key: K,
-    value: V,
-    height: i32,
-    left: Option<Box<Node<K, V>>>,
-    right: Option<Box<Node<K, V>>>,
-}
-
-impl<K: Ord, V> WAVLTree<K, V> {
+impl<K: Ord, V> CATree<K, V> {
     pub fn new() -> Self {
-        WAVLTree { root: None }
+        CATree { root: None }
     }
 }
 
-impl Table for WAVLTree {}
+impl Table for CATree {}
 
 #[cfg(test)]
 mod tests {
@@ -29,7 +17,7 @@ mod tests {
 
     #[test]
     fn test_insert_and_get() {
-        let mut tree = WAVLTree::new();
+        let mut tree = CATree::new();
         tree.set(1, "one");
         tree.set(2, "two");
         tree.set(3, "three");
