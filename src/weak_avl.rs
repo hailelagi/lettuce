@@ -1,4 +1,3 @@
-use crate::Table;
 use std::cmp::Ord;
 
 #[derive(Debug)]
@@ -20,8 +19,6 @@ impl<K: Ord, V> WAVLTree<K, V> {
         WAVLTree { root: None }
     }
 }
-
-impl Table for WAVLTree {}
 
 #[cfg(test)]
 mod tests {

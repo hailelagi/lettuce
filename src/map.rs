@@ -10,5 +10,3 @@ where
     locks: [RawRwLock; 8],
     global: RawRwLock,
 }
-
-impl Table for Map {}
