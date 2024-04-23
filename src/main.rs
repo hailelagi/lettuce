@@ -1,4 +1,6 @@
+use crate::ca_tree::CATree;
 
 fn main() {
-    println!("hello world")
+
+    println!(CATree::new())
 }
