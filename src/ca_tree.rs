@@ -46,7 +46,7 @@ struct Node<K> {
     lock: StatisticLock<K>
 }
 
-#[repr(C)]
+// #[repr(C)]
 struct StatisticLock<T> {
     mu: RwLock<T>,
     flag: LockState,
@@ -82,9 +82,9 @@ mod tests {
         tree.set(2, "two");
         tree.set(3, "three");
 
-        assert_eq!(tree.get(&1), Some(&"one"));
-        assert_eq!(tree.get(&2), Some(&"two"));
-        assert_eq!(tree.get(&3), Some(&"three"));
-        assert_eq!(tree.get(&4), None);
+        assert_eq!(tree.base_node.get(&1), Some(&"one"));
+        assert_eq!(tree.base_node.get(&2), Some(&"two"));
+        assert_eq!(tree.base_node.get(&3), Some(&"three"));
+        assert_eq!(tree.base_node.get(&4), None);
     }
 }
