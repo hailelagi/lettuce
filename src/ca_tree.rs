@@ -71,53 +71,6 @@ impl<K: cmp::Ord, V> CATree<K, V> {
     }
 }
 
-/*
-// todo: port over some of these into a proper Cursor/Stream Api
-    db_create_catree,
-    db_first_catree,
-    db_next_catree,
-    db_last_catree,
-    db_prev_catree,
-    db_put_catree,
-    db_get_catree,
-    db_get_element_catree,
-    db_member_catree,
-    db_erase_catree,
-    db_erase_object_catree,
-    db_slot_catree,
-    db_select_chunk_catree,
-    db_select_catree,
-    db_select_delete_catree,
-    db_select_continue_catree,
-    db_select_delete_continue_catree,
-    db_select_count_catree,
-    db_select_count_continue_catree,
-    db_select_replace_catree,
-    db_select_replace_continue_catree,
-    db_take_catree,
-    db_delete_all_objects_catree,
-    db_delete_all_objects_get_nitems_from_holder_catree,
-    db_free_table_catree,
-    db_free_table_continue_catree,
-    db_print_catree,
-    db_foreach_offheap_catree,
-    db_lookup_dbterm_catree,
-    db_finalize_dbterm_catree,
-    db_eterm_to_dbterm_tree_common,
-    db_dbterm_list_append_tree_common,
-    db_dbterm_list_remove_first_tree_common,
-    db_put_dbterm_catree,
-    db_free_dbterm_tree_common,
-    db_get_dbterm_key_tree_common,
-    db_get_binary_info_catree,
-    db_first_catree, /* raw_first same as first */
-    db_next_catree,   /* raw_next same as next */
-    db_first_lookup_catree,
-    db_next_lookup_catree,
-    db_last_lookup_catree,
-    db_prev_lookup_catree
-*/
-
 #[cfg(test)]
 mod tests {
     use super::*;
