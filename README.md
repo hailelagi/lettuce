@@ -1,7 +1,7 @@
 # lettuce
 
-Proof of concept/experimental justification for replacing erlang term storage.
-Compares an ART index, a CA Tree and WAVL Tree under workloads similar to those benchmarked on `:ets`
+Proof of concept deep dive into erlang term storage internals.
+Compares an `ART` index, a `CA` Tree and `WAVL` Tree under workloads similar to those benchmarked on `:ets`
 for it's ordered apis.
 
 ## References/Notes
