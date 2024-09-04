@@ -43,7 +43,7 @@ struct Node<K> {
     left: Option<Box<Node<K>>>,
     // greater than routing node's key
     right: Option<Box<Node<K>>>,
-    lock: StatisticLock<K>
+    lock: StatisticLock<K>,
 }
 
 // #[repr(C)]
@@ -56,6 +56,7 @@ struct StatisticLock<T> {
 unsafe impl<K: Send + Sync, V: Send + Sync> Send for CATree<K, V> {}
 unsafe impl<K: Send + Sync, V: Send + Sync> Sync for CATree<K, V> {}
 
+/*
 impl<K: cmp::Ord, V> CATree<K, V> {
     pub fn new() -> Self {
         CATree {
@@ -70,8 +71,10 @@ impl<K: cmp::Ord, V> CATree<K, V> {
         }
     }
 }
+    */
 
-#[cfg(test)]
+/*
+    #[cfg(test)]
 mod tests {
     use super::*;
 
@@ -88,3 +91,5 @@ mod tests {
         assert_eq!(tree.base_node.get(&4), None);
     }
 }
+
+     */

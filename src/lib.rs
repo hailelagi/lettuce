@@ -5,14 +5,18 @@ use anyhow::Result;
 // futures_io::AsyncRead;
 //  futures_core::stream::Stream;
 
+pub mod art;
 pub mod ca_tree;
+pub mod weak_avl;
 
 pub trait OrderedSet<K, V>
 where
     K: Send + Sync + cmp::Ord,
     V: Send + Sync,
 {
-    fn new() -> Result<Self> where  Self: Sized;
+    fn new() -> Result<Self>
+    where
+        Self: Sized;
     fn get(key: K, value: V) -> Result<()>;
     fn insert(key: K) -> Result<V>;
     fn range(range: Range<K>) -> Result<()>;
