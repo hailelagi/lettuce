@@ -46,13 +46,22 @@ impl<K: Ord, V> WavlTree<K, V> {
             if n.key == key {
                 Some(&n.value)
             } else {
-                // n.search(key)
+                //n.search(key)
                 None
             }
         } else {
             None
         }
     }
+
+    /* 
+    pub fn delete(&mut self, key: K) -> Option<&V>
+    where
+        K: Ord,
+        V: Any,
+    {
+    }
+    */
 }
 
 impl<K: Ord, V> Node<K, V> {
@@ -85,6 +94,13 @@ impl<K: Ord, V> Node<K, V> {
             }
         }
     }
+
+    pub fn search(&mut self, key: K, value: V) -> Option<()>
+    where 
+       K: Ord,
+       {
+        None
+       }
 }
 
 #[cfg(test)]
@@ -98,11 +114,9 @@ mod tests {
         tree.insert(2, "two");
         tree.insert(3, "three");
 
-        /*
-        assert_eq!(tree.get(&1), Some(&"one"));
-        assert_eq!(tree.get(&2), Some(&"two"));
-        assert_eq!(tree.get(&3), Some(&"three"));
-        assert_eq!(tree.get(&4), None);
-        */
+        assert_eq!(tree.get(1), Some(&"one"));
+        assert_eq!(tree.get(2), Some(&"two"));
+        assert_eq!(tree.get(3), Some(&"three"));
+        assert_eq!(tree.get(4), None);
     }
 }
