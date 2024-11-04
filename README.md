@@ -4,8 +4,6 @@ Comparing an ART index, a CA Tree and WAVL Tree under workloads similar to those
 for it's ordered single key/value ops & batch multi key ops.
 
 ## References
-Adaptive Radix Tree:
-- https://db.in.tum.de/~leis/papers/ART.pdf
 
 Weak AVL:
 - https://oar.princeton.edu/handle/88435/pr1nz5z
