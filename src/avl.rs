@@ -1,9 +1,12 @@
 use std::{any::Any, cmp::Ord};
 
 #[derive(Debug, Clone)]
-pub struct WavlTree<K, V> {
+pub struct AVLTree<K, V> {
     root: Option<Box<Node<K, V>>>,
 }
+
+unsafe impl<K: Send, V: Send> Send for AVLTree<K, V> {}
+unsafe impl<K: Sync, V: Sync> Sync for AVLTree<K, V> {}
 
 #[derive(Debug, Clone)]
 struct Node<K, V> {
@@ -14,9 +17,9 @@ struct Node<K, V> {
     right: Option<Box<Node<K, V>>>,
 }
 
-impl<K: Ord, V> WavlTree<K, V> {
+impl<K: Ord, V> AVLTree<K, V> {
     pub fn new() -> Self {
-        WavlTree { root: None }
+        AVLTree { root: None }
     }
 
     pub fn insert(&mut self, key: K, value: V) -> Option<()>
@@ -109,7 +112,7 @@ mod tests {
 
     #[test]
     fn test_insert_and_get() {
-        let mut tree = WavlTree::new();
+        let mut tree = AVLTree::new();
         tree.insert(1, "one");
         tree.insert(2, "two");
         tree.insert(3, "three");

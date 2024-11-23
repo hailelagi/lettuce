@@ -3,7 +3,8 @@ use std::{cmp, ops::Range};
 use anyhow::Result;
 
 pub mod ca_tree;
-pub mod weak_avl;
+pub mod avl;
+pub mod art;
 
 pub trait OrderedSet<K, V>
 where
