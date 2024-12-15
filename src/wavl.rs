@@ -1,25 +1,28 @@
 use std::{any::Any, cmp::Ord};
 
 #[derive(Debug, Clone)]
-pub struct AVLTree<K, V> {
-    root: Option<Box<Node<K, V>>>,
+pub struct WAVLTree<K, V> {
+    root: Link<K, V>,
+    height: usize
 }
 
-unsafe impl<K: Send, V: Send> Send for AVLTree<K, V> {}
-unsafe impl<K: Sync, V: Sync> Sync for AVLTree<K, V> {}
+type Link<K,V> = Option<Box<Node<K, V>>>;
+
+unsafe impl<K: Send, V: Send> Send for WAVLTree<K, V> {}
+unsafe impl<K: Sync, V: Sync> Sync for WAVLTree<K, V> {}
 
 #[derive(Debug, Clone)]
 struct Node<K, V> {
     key: K,
     value: V,
+    left: Link<K, V>,
+    right: Link<K, V>,
     height: i32,
-    left: Option<Box<Node<K, V>>>,
-    right: Option<Box<Node<K, V>>>,
 }
 
-impl<K: Ord, V> AVLTree<K, V> {
+impl<K: Ord, V> WAVLTree<K, V> {
     pub fn new() -> Self {
-        AVLTree { root: None }
+        WAVLTree { root: None, height: 0 }
     }
 
     pub fn insert(&mut self, key: K, value: V) -> Option<()>
@@ -56,15 +59,6 @@ impl<K: Ord, V> AVLTree<K, V> {
             None
         }
     }
-
-    /* 
-    pub fn delete(&mut self, key: K) -> Option<&V>
-    where
-        K: Ord,
-        V: Any,
-    {
-    }
-    */
 }
 
 impl<K: Ord, V> Node<K, V> {
@@ -112,7 +106,7 @@ mod tests {
 
     #[test]
     fn test_insert_and_get() {
-        let mut tree = AVLTree::new();
+        let mut tree = WAVLTree::new();
         tree.insert(1, "one");
         tree.insert(2, "two");
         tree.insert(3, "three");

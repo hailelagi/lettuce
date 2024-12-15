@@ -1,13 +1,13 @@
 use std::process::Output;
 
 use criterion::{black_box, criterion_group, criterion_main, Criterion};
-use lettuce::avl::AVLTree;
+use lettuce::wavl::WAVLTree;
 use pprof::validate;
 
 fn benchmark_insert(c: &mut Criterion) {
     c.bench_function("wavl insert", |b| {
         b.iter(|| {
-            let mut tree = AVLTree::new();
+            let mut tree = WAVLTree::new();
             for i in 0..1000 {
                 tree.insert(black_box(i), i);
             }
@@ -18,7 +18,7 @@ fn benchmark_insert(c: &mut Criterion) {
 fn benchmark_contains(c: &mut Criterion) {
     c.bench_function("wavl find", |b| {
         b.iter(|| {
-            let mut tree = AVLTree::new();
+            let mut tree = WAVLTree::new();
             for i in 0..1000 {
                 tree.insert(i, i);
             }
